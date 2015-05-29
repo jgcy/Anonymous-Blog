@@ -1,0 +1,4 @@
+<h1>See all posts</h1>
+<% @posts.each do |p| %>
+<a href="posts/#{@p.id}"><%= p.title %></a><br/>
+<% end %>
