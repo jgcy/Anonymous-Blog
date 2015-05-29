@@ -7,11 +7,14 @@
 <% end %>
 
 <form action="/posts" method="POST">
-  <label>Post title:</label>
+  <label>Post title:</label><br/>
   <input type="text" name="post[title]" value="<%= @post.title %>">
-  <br />
-  <label>Post body:</label>
+  <br/><br/>
+  <label>Post body:</label><br/>
   <textarea name="post[body]" rows="20" cols="50"><%= @post.body %></textarea>
-  <br />
+  <br/><br/>
+  <label>Tag:</label>
+  <input type="text" name="tag[name]">
+  <br/><br/>
   <input type="submit" value="Create my awesome post">
 </form>

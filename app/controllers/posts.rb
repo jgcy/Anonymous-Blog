@@ -15,7 +15,10 @@ end
 
 post '/posts' do
   @post = Post.new(params[:post])
-  if @post.save
+  @tag = Tag.new(params[:tag])
+  if @post.save && @tag.save
+    # must update post_tags table to link post and tag
+    @post_tag = PostTag.new()
     redirect to "/posts/#{@post.id}"
   else
     erb :"posts/new"
